@@ -17,14 +17,14 @@ def version_msg():
     and Python version.
     """
     python_version = sys.version[:3]
-    message = u"SQLAlchemy InitDB %(version)s from {} (Python {})"
+    message = "SQLAlchemy InitDB %(version)s from {} (Python {})"
     location = os.path.dirname(this_file_location)
     return message.format(location, python_version)
 
 
-@click.command(context_settings=dict(help_option_names=[u'-h', u'--help']))
-@click.version_option(__version__, u'-V', u'--version', message=version_msg())
-@click.option('-v', '--verbose', is_flag=True, help='Print debug information', default=False)
+@click.command(context_settings=dict(help_option_names=["-h", "--help"]))
+@click.version_option(__version__, "-V", "--version", message=version_msg())
+@click.option("-v", "--verbose", is_flag=True, help="Print debug information", default=False)
 def main(
     verbose,
 ):
