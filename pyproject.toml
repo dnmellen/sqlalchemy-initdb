@@ -92,7 +92,7 @@ exclude = [
 
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.9"
 
 # Test: packages imported in test code and packages required for the "test runner"
 pytest = { version = ">= 6.2.4", optional = true }
@@ -147,6 +147,10 @@ sqlalchemy-initdb = 'sqlalchemy_initdb.cli:main'
 
 
 # TOOLS
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.13.2"
+ipdb = "^0.13.13"
 
 [tool.pytest.ini_options]
 minversion = "6.2"
