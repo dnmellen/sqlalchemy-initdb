@@ -1,0 +1,20 @@
+[
+    {
+        "model": "example.app.models.Person",
+        "fields": {
+            "id": 4,
+            "first_name": "John",
+            "last_name": "Doe",
+            "age": 30
+        }
+    },
+    {
+        "model": "example.app.models.Person",
+        "fields": {
+            "id": 7,
+            "first_name": "Foo",
+            "last_name": "Bar",
+            "age": 33
+        }
+    }
+]
