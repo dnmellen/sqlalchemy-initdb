@@ -5,11 +5,13 @@ on:
   push:
     branches:
       - master
+      - main
       - dev
       - ci
   pull_request:
     branches:
       - master
+      - main
       - dev
     tags:
       - v*
