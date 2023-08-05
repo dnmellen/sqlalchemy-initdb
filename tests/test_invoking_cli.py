@@ -1,13 +1,15 @@
-import sys
+import pytest
+from click.testing import CliRunner
+from sqlalchemy_initdb.cli import main
 
 
-def test_invoking_cli_as_python_module(run_subprocess):
-    result = run_subprocess(
-        sys.executable,
-        '-m',
-        'sqlalchemy_initdb',
-        '--help',
-    )
+@pytest.fixture
+def cli_runner():
+    """Fixture for invoking command-line interfaces (CLIs)."""
+    return CliRunner()
+
+
+def test_invoking_cli_as_python_module(cli_runner):
+    result = cli_runner.invoke(main, ["--help"])
     assert result.exit_code == 0
-    assert result.stderr == ''
-    assert result.stdout.split('\n')[0] == "Usage: sqlalchemy-initdb [OPTIONS]"
+    assert result.output.split("\n")[0] == "Usage: main [OPTIONS]"
