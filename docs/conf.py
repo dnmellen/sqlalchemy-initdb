@@ -23,16 +23,16 @@ import sys
 
 def get_templated_vars():
     return type(
-        'TemplatedVariables',
+        "TemplatedVariables",
         (),
         dict(
-            project_slug='sqlalchemy-initdb',
-            package_name='sqlalchemy_initdb',
-            author_name='Diego Navarro',
-            year='2023',
-            version='0.0.1',
-            github_username='dnmellen',
-            repo_name='sqlalchemy-initdb',
+            project_slug="sqlalchemy-initdb",
+            package_name="sqlalchemy_initdb",
+            author_name="Diego Navarro",
+            year="2023",
+            version="0.0.1",
+            github_username="dnmellen",
+            repo_name="sqlalchemy-initdb",
         ),
     )
 
@@ -40,13 +40,13 @@ def get_templated_vars():
 variables = get_templated_vars()
 
 # Add package to PYTHONPATH
-sys.path.insert(0, os.path.abspath(os.path.join('..', 'src', variables.package_name)))
+sys.path.insert(0, os.path.abspath(os.path.join("..", "src", variables.package_name)))
 
 
 # -- Project information -----------------------------------------------------
 
 project = variables.project_slug
-copyright = '{year}, {name}'.format(
+copyright = "{year}, {name}".format(
     year=variables.year,
     name=variables.author_name,
 )
@@ -61,26 +61,26 @@ release = variables.version
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.coverage',
-    'sphinx.ext.doctest',
-    'sphinx.ext.extlinks',  # External Links Configuration: Dynamic Urls
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.napoleon',  # Allow parsing of docstrings using Google format
-    'sphinx.ext.todo',
-    'sphinx.ext.viewcode',
-    'sphinxcontrib.spelling',
+    "sphinx.ext.doctest",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
+    "sphinx.ext.extlinks",  # External Links Configuration: Dynamic Urls
+    "sphinx.ext.ifconfig",
+    "sphinx.ext.napoleon",  # Allow parsing of docstrings using Google format
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
+    "sphinxcontrib.spelling",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -89,10 +89,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 
 # on_rtd is whether we are on readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 if not on_rtd:  # only set the theme if we're building docs locally
-    html_theme = 'sphinx_rtd_theme'
+    html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -113,12 +113,12 @@ if not on_rtd:  # only set the theme if we're building docs locally
 # 2-length tuples with 1st item the url and 2nd the prefix (the "text string")
 # You can add etries here, according to your use case(s).
 extlinks = {
-    'issue': (
-        'https://github.com/{username}/{repository}/issues/'.format(
+    "issue": (
+        "https://github.com/{username}/{repository}/issues/".format(
             username=variables.github_username,
             repository=variables.repo_name,
         )
-        + '%s',
-        'issue ',
+        + "%s",
+        "issue ",
     ),
 }
