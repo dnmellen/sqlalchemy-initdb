@@ -43,7 +43,9 @@ def initialize(engine: Engine, fixtures: Sequence[Path]) -> int:
                 # Insert rows for each model
                 for model_path, rows in data:
                     model = _get_model_class(model_path)
-                    session.execute(insert(model), (e["fields"] for e in rows))
+                    session.execute(
+                        statement=insert(model), params=[e["fields"] for e in rows]
+                    )
 
         session.commit()
         return num_rows
