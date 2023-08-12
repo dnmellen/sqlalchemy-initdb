@@ -30,7 +30,7 @@ def get_templated_vars():
             package_name="sqlalchemy_initdb",
             author_name="Diego Navarro",
             year="2023",
-            version="0.0.1",
+            version="0.1.0",
             github_username="dnmellen",
             repo_name="sqlalchemy-initdb",
         ),

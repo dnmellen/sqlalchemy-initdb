@@ -11,7 +11,7 @@ build-backend = "poetry.core.masonry.api"
 ## Also renders on pypi as 'subtitle'
 [tool.poetry]
 name = "sqlalchemy_initdb"
-version = "0.0.1"
+version = "0.1.0"
 description = "Django like fixtures for SQLAlchemy"
 authors = ["Diego Navarro <dnmellen@gmail.com>"]
 maintainers = ["Diego Navarro <dnmellen@gmail.com>"]
