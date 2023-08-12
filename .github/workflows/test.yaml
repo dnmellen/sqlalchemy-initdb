@@ -53,15 +53,17 @@ jobs:
       run: tox -vv -s false
       env:
         PLATFORM: ${{ matrix.platform }}
+    
+    - name: Run Build package
+      run: tox -e build
+      env:
+        PLATFORM: ${{ matrix.platform }}
 
     - name: Check for compliance with Python Best Practices
       shell: bash
       run: |
         DIST_DIR=dist
         echo "DIST_DIR=dist" >> $GITHUB_ENV
-        mkdir ${DIST_DIR}
-        mv ".tox/${DIST_DIR}/sqlalchemy_initdb-${PKG_VERSION}.tar.gz" "${DIST_DIR}"
-        mv ".tox/${DIST_DIR}/sqlalchemy_initdb-${PKG_VERSION}-py3-none-any.whl" "${DIST_DIR}"
         tox -e check -vv -s false
 
     - name: Aggregate Test Coverage Data
@@ -70,7 +72,9 @@ jobs:
     - run: pip install coverage[toml]>=5.1
 
     - name: Send Coverage Data to Codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       with:
         directory: ./.tox
         env_vars: OS,PYTHON
