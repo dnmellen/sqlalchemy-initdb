@@ -108,9 +108,9 @@ License
 .. Build Status
 .. Github Actions: Test Workflow Status for specific branch <branch>
 
-.. |build| image:: https://img.shields.io/github/workflow/status/dnmellen/sqlalchemy-initdb/Test%20Python%20Package/master?label=build&logo=github-actions&logoColor=%233392FF
+.. |build| image:: https://img.shields.io/github/actions/workflow/status/dnmellen/sqlalchemy-initdb/test.yaml?branch=main
     :alt: GitHub Workflow Status (branch)
-    :target: https://github.com/dnmellen/sqlalchemy-initdb/actions/workflows/test.yaml?query=branch%3Amaster
+    :target: https://github.com/dnmellen/sqlalchemy-initdb/actions/workflows/test.yaml?query=branch%3Amain
 
 
 .. Documentation
@@ -141,9 +141,9 @@ License
 
 .. Github Releases & Tags
 
-.. |commits_since_specific_tag_on_master| image:: https://img.shields.io/github/commits-since/dnmellen/sqlalchemy-initdb/v0.0.1/master?color=blue&logo=github
+.. |commits_since_specific_tag_on_master| image:: https://img.shields.io/github/commits-since/dnmellen/sqlalchemy-initdb/v0.1.0/main?color=blue&logo=github
     :alt: GitHub commits since tagged version (branch)
-    :target: https://github.com/dnmellen/sqlalchemy-initdb/compare/v0.0.1..master
+    :target: https://github.com/dnmellen/sqlalchemy-initdb/compare/main%40%7B1day%7D...main
 
 .. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/dnmellen/sqlalchemy-initdb/latest?color=blue&logo=semver&sort=semver
     :alt: GitHub commits since latest release (by SemVer)
